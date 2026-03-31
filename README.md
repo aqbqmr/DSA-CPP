@@ -1,6 +1,6 @@
 # DSA C++
 
-This repository is a starter setup for storing DSA and pattern-printing problems in C++ and publishing sample output to GitHub automatically.
+DSA and problem-solving in C++ with sample inputs, outputs, and GitHub Actions for automatic output generation.
 
 ## Repo layout
 
@@ -37,15 +37,4 @@ Expected output:
 * * *
 * *
 *
-```
-
-## Push commands
-
-After creating an empty GitHub repository, connect this folder and push:
-
-```bash
-git remote add origin YOUR_GITHUB_REPO_URL
-git add README.md .gitignore problems scripts .github
-git commit -m "Initial DSA C++ repo"
-git push -u origin main
 ```
