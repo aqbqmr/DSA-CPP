@@ -7,3 +7,4 @@ demo
 problems/**/main
 outputs/*.tmp
 outputs/.tmp/
+outputs/**/.tmp/

@@ -28,3 +28,11 @@ DSA and problem-solving in C++ with a cleaner setup for daily question practice.
 - `outputs/pattern-printing.txt`
 
 The older sample still works, and the runner script will use the local `input.txt` inside that folder.
+
+## Practice output
+
+- `problems/practice/something.cpp`
+- `problems/practice/input.txt`
+- `outputs/practice/something.txt`
+
+The practice output file stores the latest program output for `something.cpp`, or the compile error if the file is not runnable yet.

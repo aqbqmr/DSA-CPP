@@ -1,0 +1,40 @@
+name: Publish Practice Output
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "problems/practice/something.cpp"
+      - "problems/practice/input.txt"
+      - "scripts/run_practice_output.sh"
+      - ".github/workflows/publish-practice-output.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish-output:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate output
+        run: bash scripts/run_practice_output.sh
+
+      - name: Commit output if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/practice/something.txt outputs/practice/README.txt
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update practice output"
+          git push
