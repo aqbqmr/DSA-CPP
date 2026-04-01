@@ -1,7 +1,9 @@
 .DS_Store
+build/
 LearnC++
 PatternPrinting
 demo
 .vscode/PatternPrinting
+problems/**/main
 outputs/*.tmp
 outputs/.tmp/
