@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "problems/pattern-printing/main.cpp"
+      - "problems/pattern-printing/patternPrinting.cpp"
       - "problems/pattern-printing/input.txt"
       - "scripts/run_pattern_printing.sh"
       - ".github/workflows/publish-pattern-output.yml"

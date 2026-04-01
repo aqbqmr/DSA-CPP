@@ -23,7 +23,7 @@ DSA and problem-solving in C++ with a cleaner setup for daily question practice.
 
 ## Existing sample
 
-- `problems/pattern-printing/main.cpp`
+- `problems/pattern-printing/patternPrinting.cpp`
 - `problems/pattern-printing/input.txt`
 - `outputs/pattern-printing.txt`
 

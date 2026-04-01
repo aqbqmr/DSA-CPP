@@ -3,13 +3,16 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SOURCE_FILE="$ROOT_DIR/problems/pattern-printing/main.cpp"
+SOURCE_FILE="$ROOT_DIR/problems/pattern-printing/patternPrinting.cpp"
 INPUT_FILE="$ROOT_DIR/problems/pattern-printing/input.txt"
 OUTPUT_DIR="$ROOT_DIR/outputs"
 OUTPUT_FILE="$OUTPUT_DIR/pattern-printing.txt"
 BUILD_DIR="$OUTPUT_DIR/.tmp"
 EXECUTABLE="$BUILD_DIR/pattern-printing"
 TEMP_OUTPUT="$BUILD_DIR/pattern-printing.txt"
+SOURCE_FILE_REL="problems/pattern-printing/patternPrinting.cpp"
+INPUT_FILE_REL="problems/pattern-printing/input.txt"
+OUTPUT_FILE_REL="outputs/pattern-printing.txt"
 
 mkdir -p "$OUTPUT_DIR" "$BUILD_DIR"
 
@@ -23,6 +26,6 @@ fi
 
 mv "$TEMP_OUTPUT" "$OUTPUT_FILE"
 
-printf 'Generated from %s\n' "$SOURCE_FILE" > "$OUTPUT_DIR/README.txt"
-printf 'Input file: %s\n' "$INPUT_FILE" >> "$OUTPUT_DIR/README.txt"
-printf 'Output file: %s\n' "$OUTPUT_FILE" >> "$OUTPUT_DIR/README.txt"
+printf 'Generated from %s\n' "$SOURCE_FILE_REL" > "$OUTPUT_DIR/README.txt"
+printf 'Input file: %s\n' "$INPUT_FILE_REL" >> "$OUTPUT_DIR/README.txt"
+printf 'Output file: %s\n' "$OUTPUT_FILE_REL" >> "$OUTPUT_DIR/README.txt"
