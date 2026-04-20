@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 */12 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/sync-leetcode.yml"
 
 permissions:
   contents: write
