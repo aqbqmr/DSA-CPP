@@ -8,3 +8,5 @@ problems/**/main
 outputs/*.tmp
 outputs/.tmp/
 outputs/**/.tmp/
+**/tempCodeRunnerFile.cpp
+*.out

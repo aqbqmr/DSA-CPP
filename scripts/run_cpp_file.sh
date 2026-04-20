@@ -33,17 +33,18 @@ case "$SOURCE_FILE" in
 esac
 
 RELATIVE_SOURCE="${SOURCE_FILE#$PROJECT_ROOT/}"
+SOURCE_STEM="${SOURCE_FILE%.cpp}"
+SOURCE_DIR="$(dirname "$SOURCE_FILE")"
+SOURCE_BASENAME="$(basename "$SOURCE_STEM")"
+BINARY_PATH="$PROJECT_ROOT/build/${RELATIVE_SOURCE%.cpp}"
+LEGACY_INPUT_FILE="$SOURCE_DIR/input.txt"
+SAME_NAME_INPUT_FILE="$SOURCE_DIR/${SOURCE_BASENAME}.txt"
+LEGACY_MAPPED_INPUT_FILE=""
 
 if [[ "$RELATIVE_SOURCE" == problems/* ]]; then
     PROBLEM_PATH="${RELATIVE_SOURCE#problems/}"
-    BINARY_PATH="$PROJECT_ROOT/build/${PROBLEM_PATH%.cpp}"
-    INPUT_FILE="$PROJECT_ROOT/inputs/${PROBLEM_PATH%.cpp}.txt"
-else
-    BINARY_PATH="$PROJECT_ROOT/build/${RELATIVE_SOURCE%.cpp}"
-    INPUT_FILE=""
+    LEGACY_MAPPED_INPUT_FILE="$PROJECT_ROOT/inputs/${PROBLEM_PATH%.cpp}.txt"
 fi
-
-LEGACY_INPUT_FILE="$SOURCE_DIR/input.txt"
 
 mkdir -p "$(dirname "$BINARY_PATH")"
 
@@ -58,12 +59,15 @@ fi
 echo
 echo "Running: $(basename "$SOURCE_FILE")"
 
-if [[ -n "$INPUT_FILE" && -f "$INPUT_FILE" ]]; then
-    echo "Input: $INPUT_FILE"
-    "$BINARY_PATH" < "$INPUT_FILE"
+if [[ -f "$SAME_NAME_INPUT_FILE" ]]; then
+    echo "Input: $SAME_NAME_INPUT_FILE"
+    "$BINARY_PATH" < "$SAME_NAME_INPUT_FILE"
 elif [[ -f "$LEGACY_INPUT_FILE" ]]; then
     echo "Input: $LEGACY_INPUT_FILE"
     "$BINARY_PATH" < "$LEGACY_INPUT_FILE"
+elif [[ -n "$LEGACY_MAPPED_INPUT_FILE" && -f "$LEGACY_MAPPED_INPUT_FILE" ]]; then
+    echo "Input: $LEGACY_MAPPED_INPUT_FILE"
+    "$BINARY_PATH" < "$LEGACY_MAPPED_INPUT_FILE"
 else
     "$BINARY_PATH"
 fi
