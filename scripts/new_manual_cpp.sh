@@ -14,7 +14,8 @@ RELATIVE_TARGET="$(echo "$RELATIVE_TARGET" | sed -E 's#^/+##; s#/+$##')"
 TARGET_DIR="$PROJECT_ROOT/manual/cpp/$(dirname "$RELATIVE_TARGET")"
 TARGET_NAME="$(basename "$RELATIVE_TARGET")"
 SOURCE_FILE="$TARGET_DIR/${TARGET_NAME}.cpp"
-INPUT_FILE="$TARGET_DIR/${TARGET_NAME}.txt"
+NOTE_FILE="$TARGET_DIR/${TARGET_NAME}.md"
+DISPLAY_TITLE="$(echo "$TARGET_NAME" | tr '_-' '  ' | awk '{for (i = 1; i <= NF; ++i) $i = toupper(substr($i, 1, 1)) substr($i, 2); print}')"
 
 mkdir -p "$TARGET_DIR"
 
@@ -34,8 +35,33 @@ int main() {
 EOF
 fi
 
-touch "$INPUT_FILE"
+if [[ ! -f "$NOTE_FILE" ]]; then
+    cat > "$NOTE_FILE" <<EOF
+# ${DISPLAY_TITLE}
+
+## Goal
+
+Write what you want to learn in this topic.
+
+## Key Points
+
+- 
+
+## Time and Space Complexity
+
+- Time:
+- Space:
+
+## Mistakes To Avoid
+
+- 
+
+## Revision Notes
+
+- 
+EOF
+fi
 
 echo "Created:"
 echo "  $SOURCE_FILE"
-echo "  $INPUT_FILE"
+echo "  $NOTE_FILE"

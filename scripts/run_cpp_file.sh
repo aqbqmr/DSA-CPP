@@ -39,12 +39,6 @@ SOURCE_BASENAME="$(basename "$SOURCE_STEM")"
 BINARY_PATH="$PROJECT_ROOT/build/${RELATIVE_SOURCE%.cpp}"
 LEGACY_INPUT_FILE="$SOURCE_DIR/input.txt"
 SAME_NAME_INPUT_FILE="$SOURCE_DIR/${SOURCE_BASENAME}.txt"
-LEGACY_MAPPED_INPUT_FILE=""
-
-if [[ "$RELATIVE_SOURCE" == problems/* ]]; then
-    PROBLEM_PATH="${RELATIVE_SOURCE#problems/}"
-    LEGACY_MAPPED_INPUT_FILE="$PROJECT_ROOT/inputs/${PROBLEM_PATH%.cpp}.txt"
-fi
 
 mkdir -p "$(dirname "$BINARY_PATH")"
 
@@ -65,9 +59,6 @@ if [[ -f "$SAME_NAME_INPUT_FILE" ]]; then
 elif [[ -f "$LEGACY_INPUT_FILE" ]]; then
     echo "Input: $LEGACY_INPUT_FILE"
     "$BINARY_PATH" < "$LEGACY_INPUT_FILE"
-elif [[ -n "$LEGACY_MAPPED_INPUT_FILE" && -f "$LEGACY_MAPPED_INPUT_FILE" ]]; then
-    echo "Input: $LEGACY_MAPPED_INPUT_FILE"
-    "$BINARY_PATH" < "$LEGACY_MAPPED_INPUT_FILE"
 else
     "$BINARY_PATH"
 fi

@@ -1,15 +1,34 @@
 # Manual C++ Practice
 
-Keep your own handwritten DSA code here.
+This is your personal DSA study area.
 
-Examples:
+Use it for:
 
-- `manual/cpp/arrays/two_sum_practice.cpp`
-- `manual/cpp/recursion/subsets.cpp`
+- topic-wise notes
+- handwritten implementations
+- revision examples
+- dry-run explanations
+- mistakes and learnings
+
+Recommended pattern:
+
+- `manual/cpp/arrays/two_pointers.cpp`
+- `manual/cpp/arrays/two_pointers.md`
 - `manual/cpp/graphs/bfs.cpp`
+- `manual/cpp/graphs/bfs.md`
 
-Optional local input files can live beside the source file with the same name:
+Quick start:
 
-- `manual/cpp/arrays/two_sum_practice.txt`
+```bash
+./scripts/new_manual_cpp.sh arrays/two_pointers
+```
 
-This folder is separate from LeetCode problem folders, so both workflows can stay in the same GitHub repo without mixing together.
+That gives you:
+
+- one `.cpp` file for code
+- one `.md` file for notes you can push to GitHub
+
+Optional:
+
+- add `same_name.txt` beside a source file if you want local input while running it
+- use `ROADMAP.md` to track what you want to learn next
