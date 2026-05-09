@@ -4,11 +4,7 @@
     {
       "label": "C++: Compile Current File",
       "type": "shell",
-<<<<<<< HEAD
       "command": "${workspaceFolder}/scripts/run_cpp_file.sh",
-=======
-      "command": "${workspaceFolder}/C++/scripts/run_cpp_file.sh",
->>>>>>> 8b22d08 (Merged C++ subfolder into main repository)
       "args": [
         "compile",
         "${file}"
@@ -26,11 +22,7 @@
     {
       "label": "C++: Run Current File",
       "type": "shell",
-<<<<<<< HEAD
       "command": "${workspaceFolder}/scripts/run_cpp_file.sh",
-=======
-      "command": "${workspaceFolder}/C++/scripts/run_cpp_file.sh",
->>>>>>> 8b22d08 (Merged C++ subfolder into main repository)
       "args": [
         "run",
         "${file}"

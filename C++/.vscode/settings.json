@@ -1,0 +1,12 @@
+{
+  "explorer.openEditors.visible": 8,
+  "explorer.autoReveal": true,
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "mixed",
+  "files.exclude": {
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "**/.DS_Store": true
+  }
+}
