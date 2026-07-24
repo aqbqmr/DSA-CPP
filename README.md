@@ -14,16 +14,37 @@ This repo is now focused on only two things:
 - `.github/workflows/sync-leetcode.yml`
   GitHub Actions workflow that fetches accepted LeetCode submissions
 - `scripts/new_manual_cpp.sh`
+  Creating a manual study file and matching notes file
 - `scripts/run_cpp_file.sh`
-  Compiles and runs any `.cpp` file inside this repo
+  Compiling and running any `.cpp` file inside this repo
 
 ## LeetCode sync
 
 Accepted submissions are fetched automatically by the GitHub Action in `.github/workflows/sync-leetcode.yml`.
+...............................................................................................................................
+`if you want to set up this..then follow the following steps and Give me the `star` if you satisfied from this...`
+
+`Step-wise Process to set it up:-`
+
+1. Log in to LeetCode in your browser.
+2. Open DevTools and copy your `csrftoken` cookie value.
+3. Copy your `LEETCODE_SESSION` cookie value.
+4. Add both values to your GitHub repo secrets:
+   - `LEETCODE_CSRF_TOKEN`
+   - `LEETCODE_SESSION`
+5. In GitHub repository settings, make sure Actions has read and write permission.
+6. Run the `Sync LeetCode` workflow once from the `Actions` tab.
+
+The workflow will create or update folders like:
+
+- `0001-two-sum/`
+- `0007-reverse-integer/`
+- `0009-palindrome-number/`
+- `4168-mirror-distance-of-an-integer/`
 
 ## Manual study area
 
-Here `manual/cpp/` for topic-wise learning that I write myself and push to GitHub.
+Use `manual/cpp/` for topic-wise learning that you write yourself and push them in this repo.
 
 Example:
 
@@ -36,7 +57,7 @@ This creates:
 - `manual/cpp/arrays/two_pointer_notes.cpp`
 - `manual/cpp/arrays/two_pointer_notes.md`
 
-the `.cpp` file for practice code and the `.md` file for notes, patterns, mistakes, and revision points.
+Using the `.cpp` file for practice code and the `.md` file for notes, patterns, mistakes, and revision points.
 
 ## Run C++ files
 

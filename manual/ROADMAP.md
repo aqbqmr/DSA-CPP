@@ -1,28 +1,28 @@
 # C++ DSA Roadmap
 
-Use this file like a simple checklist and learning tracker.
+I'm using this file like a simple checklist and learning tracker.
 
 ## Core C++
 
-- [ ] Input and output
-- [ ] Functions
-- [ ] References and pointers
-- [ ] STL vectors
+- [ `Comfortable` ] Input and output
+- [ `Comfortable` ] Functions
+- [ `Comfortable` ] References and pointers
+- [ little comfortable ] STL vectors
 - [ ] STL pairs
 - [ ] STL maps and unordered maps
 - [ ] STL sets and unordered sets
 - [ ] STL stacks and queues
-- [ ] Sorting with custom comparators
+- [ `Comfortable` ] Sorting with custom comparators
 
 ## DSA Topics
 
-- [ ] Arrays
+- [ Still Learning ] Arrays
 - [ ] Strings
-- [ ] Hashing
+- [ `covered` ] Hashing
 - [ ] Two pointers
 - [ ] Sliding window
 - [ ] Binary search
-- [ ] Recursion
+- [ little bit Strugling` ] Recursion
 - [ ] Backtracking
 - [ ] Linked list
 - [ ] Stack
@@ -44,7 +44,7 @@ Use this file like a simple checklist and learning tracker.
 
 ## Study rule
 
-For each topic, try to keep:
+For each topic, trying to keep this:-
 
 - one `.cpp` file with your own implementation
-- one `.md` file with notes, patterns, and mistakes
+- one `.md` file with notes, patterns, and mistakes (`optional`)
