@@ -21,7 +21,7 @@ This repo is now focused on only two things:
 ## LeetCode sync
 
 Accepted submissions are fetched automatically by the GitHub Action in `.github/workflows/sync-leetcode.yml`.
-...............................................................................................................................
+
 `if you want to set up this..then follow the following steps and Give me the `star` if you satisfied from this...`
 
 `Step-wise Process to set it up:-`
