@@ -6,7 +6,8 @@ public:
         for(int i = 0; i < n; i++){
             for(int j = i + 1; j < n; j++){
                 int diff = nums[j] - nums[i];
-                if(diff > 0) {
+                // If nums[i] < nums[j], calculate the difference and they should be positive...if positive then update else check another
+                if(diff > 0){
                     ans = max(ans, diff);
                 }
             }
